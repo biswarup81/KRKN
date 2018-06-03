@@ -5,6 +5,7 @@ include_once './inc/header.php'; ?>
 <body>
 <!-- Fixed navbar -->
 <?php include_once './inc/topnav.php';?>
+
 <div class="header-pagging-add"></div>
 <!-- Carousel ================================================== -->
 <div id="myCarousel" class="carousel slide slider-banner home-banner-slider">

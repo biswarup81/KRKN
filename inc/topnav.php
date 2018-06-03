@@ -36,15 +36,15 @@
       </div>
     <div class="navbar-collapse collapse pull-right">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="./">Home</a></li>
         
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+        <li class="dropdown"> <a href="about_the_college.php" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
           <ul class="dropdown-menu">
-                        <li><a href="#">College History</a></li>
-                        <li><a href="#">Principal’s Desk</a></li>
-                        <li><a href="#">Rules & Regulations</a></li>
-                        <li><a href="#">Academic Calendar</a></li>
-                        <li><a href="#">Aims and objectives</a></li>
+                        <li><a href="about_the_college.php">College History</a></li>
+                        <li><a href="principal_desk.php">Principal’s Desk</a></li>
+                        <li><a href="rules_regulation.php">Rules & Regulations</a></li>
+                        <li><a href="academic_calendar.php">Academic Calendar</a></li>
+                        <li><a href="content-gen.php?page_id=3">Aims and objectives</a></li>
           </ul>
 </li>
         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
@@ -70,17 +70,7 @@
             <li><a href="education-academics.php">Education</a></li>
             <li><a href="mass-communication-and-journalism-academics.php">Mass Communication & Journalism</a></li>
             
-            
-            
-            
-            <li><a href="">About the Department</a></li>
-             <li><a href="">Research Activities (faculty-wise)</a></li>
-             <li><a href="">Academic Activities</a></li>
-             <li><a href="">Other Activities</a></li>
-             <li><a href="">Annual Assessment Report (in pdf)</a></li>
-             <li><a href="">Departmental Notice</a></li>
-             <li><a href="">Others</a></li>
-             <li><a href="">Useful Links</a></li> 
+       
 		</ul>
         </li>	
         <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admission <b class="caret"></b></a>
