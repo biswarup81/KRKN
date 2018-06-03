@@ -1,6 +1,8 @@
 <?php
 //include_once "./inc/datacon.php";
-include_once './inc/header.php'; ?>
+include_once './inc/header.php'; 
+$course_id = "1"; //TODO Change this to get the id from runtime
+?>
 
 <body>
 <!-- Fixed navbar -->
@@ -62,7 +64,14 @@ include_once './inc/header.php'; ?>
 </section>                
 
 
+<section id = "section-research-activities" ><p>Loading..</p></section>
+<section id = "section-academic-activities" ><p>Loading..</p></section>
+<section id = "section-other-activities" ><p>Loading..</p></section>
 
+<section id = "section-annual-assessment-report"> Loading..</section>
+
+<section id = "section-departmental-notice" >Loading..</section>
+<section id='section-other' >Loading..</section>
 
 
 <div class="clearfix"></div>
