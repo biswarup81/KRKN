@@ -40,7 +40,7 @@
         
         <li class="dropdown"> <a href="about_the_college.php" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
           <ul class="dropdown-menu">
-                        <li><a href="about_the_college.php">College History</a></li>
+                        <li><a href="content-gen.php?page_id=1">About the College</a></li>
                         <li><a href="principal_desk.php">Principal’s Desk</a></li>
                         <li><a href="rules_regulation.php">Rules & Regulations</a></li>
                         <li><a href="academic_calendar.php">Academic Calendar</a></li>
@@ -51,8 +51,8 @@
                     <ul class="dropdown-menu">
                         <li><a href="gov-body.php">Governing Body</a></li>
                         <li><a href="#">IQAC</a></li>
-                        <li><a href="#">Different  Sub-Committees</a></li>
-                        <li><a href="#">Office </a></li>
+                        <li><a href="content-gen.php?page_id=4">Different  Sub-Committees</a></li>
+                        <li><a href="our-office.php">Office Staff </a></li>
                         <li><a href="#">Others </a></li>
             	</ul>
         </li>	
@@ -85,7 +85,7 @@
             </li>
             <li><a href="#">Post Graduate Regular</a></li>
             <li><a href="#">Intake Capacity</a></li>
-            <li><a href="#">Students’ Enrolment over the Years</a></li>  
+            <li><a href="students-enrolment.php">Students’ Enrolment over the Years</a></li>  
             <li><a href="#">Prospectus </a></li>
             
             
@@ -110,7 +110,7 @@
 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Activities <b class="caret"></b></a>
                        
                             <ul class="dropdown-menu">        
-                                     <li><a href="#">Seminars</a></li>
+                                     <li><a href="seminar.php">Seminars</a></li>
                                     <li><a href="national-service-scheme.php">NSS</a></li>
                                     <li><a href="#">Kanyashree Club</a></li>
                                     <li><a href="#">Annual Sports</a></li>

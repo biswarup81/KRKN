@@ -12,6 +12,9 @@ if(isset($_GET['page_id'])){
 <!-- Fixed navbar -->
 <?php include_once './inc/topnav.php';?>
 <div class="header-pagging-add"></div>
+<section class="inner-banner-panel clearfix">
+<img src="images/innaab.jpg" width="1400" height="350" alt="img" title="img">
+</section>
 <section id = "info" ><p>Loading..</p></section>
 
 <br>
