@@ -52,13 +52,22 @@ $result = mysql_query($sql_menu) or die(mysql_error());
 			<li class="dropdown"> <a href="<?php echo $row['url'];?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo htmlspecialchars($row['disp_name'])?><b class="caret"></b></a>
           <ul class="dropdown-menu">
           <?php 
-          $sub_query = "SELECT `row_id`, `par_row_id`, `has_sub_menu`, `name`, `disp_name`, `menu_type`, `url`, `order`, `active_flg`, `created`, `created_by`, `last_upd_by`, `last_upd_dt` FROM `pg_navigation_menu` WHERE `par_row_id` = '".$row_id."'";
+          if($row['menu_type'] == "Department"){
+              $sub_query1 = "SELECT * FROM `pg_department` ";
+              $sub_result1 = mysql_query($sub_query1) or die(mysql_error());
+              if(mysql_num_rows($sub_result1)){
+                  while($sub_row1=mysql_fetch_array($sub_result1)){
+                      ?>
+                        <li><a href="content-department.php?dept_id=<?php echo $sub_row1['row_id'];?>"><?php echo htmlspecialchars($sub_row1['name'])?></a></li>
+          <?php }}
+          } else {
+          $sub_query = "SELECT `row_id`, `par_row_id`, `template_id`, `has_sub_menu`, `name`, `disp_name`, `menu_type`, `url`, `order`, `active_flg`, `created`, `created_by`, `last_upd_by`, `last_upd_dt` FROM `pg_navigation_menu` WHERE `par_row_id` = '".$row_id."'";
           $sub_result = mysql_query($sub_query) or die(mysql_error());
           if(mysql_num_rows($result)){
           	while($sub_row=mysql_fetch_array($sub_result)){
           ?>
                         <li><a href="content-gen.php?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
-          <?php }}?>  
+          <?php }}}?>  
           </ul>
 </li>
 			<?php }}?>
