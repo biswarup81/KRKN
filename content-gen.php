@@ -25,7 +25,7 @@ if(isset($_GET['page_id'])){
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#info").addClass("section clearfix about-principal-voice krk-bg-light box-shadow");
-	$("#info").load("./ajax/about_us.php?page_id=<?php echo $page_id?>");
+	$("#info").load("./ajax/wp-content-gen.php?page_id=<?php echo $page_id?>");
 });
 </script>
 </body>

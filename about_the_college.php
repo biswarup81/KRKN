@@ -8,21 +8,7 @@ $page_id = "1"; //TODO Change this to get the id from runtime
 <?php include_once './inc/topnav.php';?>
 <div class="header-pagging-add"></div>
 <section id = "about-us" ><p>Loading..</p></section>
-
-
-
-
-
-
-
-
-
-
-
-
 <br>
-
-
 <div class="clearfix"></div>
 <?php include_once './inc/footer.php';?>
 <script type="text/javascript">
