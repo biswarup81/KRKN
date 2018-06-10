@@ -2,7 +2,8 @@
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
     //echo "id is".$id;
-} else { echo "id not set"; $id = "0"; }
+} else { //echo "id not set"; $id = "0"; 
+}
 ?>
 
 
