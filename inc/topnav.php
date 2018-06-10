@@ -1,3 +1,10 @@
+<?php 
+
+$sql_menu = "SELECT `row_id`, `par_row_id`, `has_sub_menu`, `name`, `disp_name`, `menu_type`, `url`, `order`, `active_flg`, `created`, `created_by`, `last_upd_by`, `last_upd_dt` FROM `pg_navigation_menu` WHERE `par_row_id` is NULL and `has_sub_menu` = 1";
+$result = mysql_query($sql_menu) or die(mysql_error());	
+
+
+?>
 <header class="navbar  navbar-fixed-top header">
 <div class="container-fluid bg-blue header-top">
 		<div class="container">
@@ -36,118 +43,26 @@
       </div>
     <div class="navbar-collapse collapse pull-right">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./">Home</a></li>
-        
-        <li class="dropdown"> <a href="about_the_college.php" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+      
+      	<?php if(mysql_num_rows($result)){
+				
+				while($row=mysql_fetch_array($result)){
+					$row_id = $row['row_id'];
+			?>
+			<li class="dropdown"> <a href="<?php echo $row['url'];?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo htmlspecialchars($row['disp_name'])?><b class="caret"></b></a>
           <ul class="dropdown-menu">
-                        <li><a href="content-gen.php?page_id=1">About the College</a></li>
-                        <li><a href="principal_desk.php">Principal’s Desk</a></li>
-                        <li><a href="rules_regulation.php">Rules & Regulations</a></li>
-                        <li><a href="academic_calendar.php">Academic Calendar</a></li>
-                        <li><a href="content-gen.php?page_id=3">Aims and objectives</a></li>
+          <?php 
+          $sub_query = "SELECT `row_id`, `par_row_id`, `has_sub_menu`, `name`, `disp_name`, `menu_type`, `url`, `order`, `active_flg`, `created`, `created_by`, `last_upd_by`, `last_upd_dt` FROM `pg_navigation_menu` WHERE `par_row_id` = '".$row_id."'";
+          $sub_result = mysql_query($sub_query) or die(mysql_error());
+          if(mysql_num_rows($result)){
+          	while($sub_row=mysql_fetch_array($sub_result)){
+          ?>
+                        <li><a href="content-gen.php?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
+          <?php }}?>  
           </ul>
 </li>
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="gov-body.php">Governing Body</a></li>
-                        <li><a href="#">IQAC</a></li>
-                        <li><a href="content-gen.php?page_id=4">Different  Sub-Committees</a></li>
-                        <li><a href="our-office.php">Office Staff </a></li>
-                        <li><a href="#">Others </a></li>
-            	</ul>
-        </li>	
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academics <b class="caret"></b></a>
-         <ul class="dropdown-menu">      
-            <li><a href="bengali-academics.php">Bengali</a></li>
-            <li><a href="history-academics.php">History</a></li>
-            <li><a href="geography-academics.php">Geography</a></li> 
-            <li><a href="english-academics.php">English</a></li>
-            <li><a href="sanskrit-academics.php">Sanskrit</a></li>
-            <li><a href="economics-academics.php">Economics</a></li>
-            <li><a href="political-science-academics.php">Political Science</a></li>
-            <li><a href="physical-education-academics.php">Physical Education</a></li>
-            <li><a href="philosophy-academics.php">Philosophy</a></li>
-            <li><a href="education-academics.php">Education</a></li>
-            <li><a href="mass-communication-and-journalism-academics.php">Mass Communication & Journalism</a></li>
-            
-       
-		</ul>
-        </li>	
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admission <b class="caret"></b></a>
-        
-   <ul class="dropdown-menu">  
+			<?php }}?>
 
-            <li><a href="#">Under Graduate Regular <b class="caret"></b></a>
-            		<ul class="submenyy">
-                        <li class="text-blink"><a href="#">Apply Online</a></li>
-                        <li><a href="#">Student Portal</a></li>
-                    </ul>
-            </li>
-            <li><a href="#">Post Graduate Regular</a></li>
-            <li><a href="#">Intake Capacity</a></li>
-            <li><a href="students-enrolment.php">Students’ Enrolment over the Years</a></li>  
-            <li><a href="#">Prospectus </a></li>
-            
-            
-</ul>
-</li>		
-        <li class="dropdown"> <a href="collage-library.php" class="dropdown-toggle" data-toggle="dropdown">Library <b class="caret"></b></a>
-<ul class="dropdown-menu">        
- <li><a href="#">About the Library</a></li>
- <li><a href="#">Collection</a></li>
- <li><a href="#">Services</a></li>
- <li><a href="#">Rules & Regulations</a></li>
- <li><a href="#">E-Resources</a></li>
- <li><a href="#">Useful Links</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Publications <b class="caret"></b></a>
-<ul class="dropdown-menu">        
- <li><a href="#">College Magazine</a></li>
- <li><a href="#">Journal</a></li>
-</ul>
-</li>
-<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Activities <b class="caret"></b></a>
-                       
-                            <ul class="dropdown-menu">        
-                                     <li><a href="seminar.php">Seminars</a></li>
-                                    <li><a href="national-service-scheme.php">NSS</a></li>
-                                    <li><a href="#">Kanyashree Club</a></li>
-                                    <li><a href="#">Annual Sports</a></li>
-                                    <li><a href="#">Counseling Cell</a></li>
-                                    <li><a href="#">Placement Cell</a></li>
-                                    <li><a href="#">Departmental Excursion</a></li>
-                                    <li><a href="#">Staff-Student get-together</a></li>
-                                    <li><a href="#">Alumni</a></li>
-                            </ul>
-                       </li>			
-<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Facilities <b class="caret"></b></a>
-                        <ul class="dropdown-menu">        
- <li><a href="#">Students’ Union</a></li>
-
- <li><a href="#">Student Aid/Awards</a></li>
-
- <li><a href="collage-canteen.php">Canteen</a></li>
-
- <li><a href="collage-laboratory.php">Lab (Department-wise)</a></li>
-
- <li><a href="#">Common Room (Boys & Girls)</a></li>
- <li><a href="#">Auditorium</a></li>
-
- <li><a href="#">ICT Room</a></li>
-
- <li><a href="#">Grievance Cell</a></li>
-
-
- <li><a href="#">Medical Assistance</a></li> 
-
- <li><a href="#">Smart Class Room</a></li>
-
- <li><a href="#">Lush Green Play Field</a></li> 
-
- <li><a href="#">Fully Equipped Multi-Gymnasium, Yoga & Physiotherapy Centre.</a></li>
-</ul>
-						</li>	
 	
 </ul>
     </div>
