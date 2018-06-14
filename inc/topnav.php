@@ -65,9 +65,12 @@ $result = mysql_query($sql_menu) or die(mysql_error());
           $sub_result = mysql_query($sub_query) or die(mysql_error());
           if(mysql_num_rows($result)){
           	while($sub_row=mysql_fetch_array($sub_result)){
+          	    if($sub_row['name'] = "principals-desk") {
           ?>
-                        <li><a href="content-gen.php?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
-          <?php }}}?>  
+                        <li><a href="content-prpl-gen.php?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
+          <?php } else {?>
+           <li><a href="content-gen.php?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
+          <?php }}}}?>  
           </ul>
 </li>
 			<?php }}?>
