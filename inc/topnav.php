@@ -43,7 +43,7 @@ $result = mysql_query($sql_menu) or die(mysql_error());
       </div>
     <div class="navbar-collapse collapse pull-right">
       <ul class="nav navbar-nav">
-      
+      	<li class="active"><a href="./">Home</a></li>
       	<?php if(mysql_num_rows($result)){
 				
 				while($row=mysql_fetch_array($result)){
@@ -65,7 +65,7 @@ $result = mysql_query($sql_menu) or die(mysql_error());
           $sub_result = mysql_query($sub_query) or die(mysql_error());
           if(mysql_num_rows($result)){
           	while($sub_row=mysql_fetch_array($sub_result)){
-          	    if($sub_row['name'] = "principals-desk") {
+          	    if($sub_row['name'] == "principals-desk") {
           ?>
                         <li><a href="content-prpl-gen.php?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
           <?php } else {?>

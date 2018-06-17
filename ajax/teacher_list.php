@@ -28,7 +28,8 @@ if(isset($_GET['dept_id'])) {
     	$sub_result = mysql_query($staff_details_q) or die(mysql_error());
     	if(mysql_num_rows($sub_result)){
 	    	while($sub_row1=mysql_fetch_array($sub_result)){
-	    		$name = $sub_row1['title']." ".$sub_row1['fst_name']." ".$sub_row1['middle_name']." ".$sub_row1['last_name'];
+	    	    $staff_id = $sub_row1['row_id'];
+	    	    $name = $sub_row1['title']." ".$sub_row1['fst_name']." ".$sub_row1['middle_name']." ".$sub_row1['last_name'];
 	    		$qualification= $sub_row1['qualification'];
 	    		$desig= $sub_row1['desig'];
 	    	
@@ -49,7 +50,7 @@ if(isset($_GET['dept_id'])) {
     <h3 class="faculti-name text-gradient"><?php echo $name;?></h3>
     <div class="faculti-qualification"><?php echo $qualification; ?></div>
     <div class="faculti-designation"><?php echo $desig; ?></div>
-    <a class="btn-gradient btn btn-small" href="">View Resume</a>
+    <a class="btn-gradient btn btn-small" href="./content-resume.php?staff_id=<?php echo $staff_id?>">View Resume</a>
     </div>
     </div>
     

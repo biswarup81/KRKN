@@ -67,28 +67,9 @@ include_once './inc/header.php'; ?>
     </div>
 <!-- /.carousel -->
 <!-- ================================================== -->
-<section class="section clearfix about-principal-voice krk-bg-light box-shadow">
-    <div class="container clearfix">
-      <div class="row featurette">
-        
-        <div class="col-md-4 pull-right principal-img">
-          <div class="prin-img-box col-lg-12 pull-left"><img class="featurette-image img-responsive" src="images/princepal-img.png" alt=""></div>
-
- 
-        </div>
-        <div class="col-md-8 pull-left text-justify">
-          
-          <p>Urged by the strong feeling of kindly light of learning in the remotest backward areas of Burdwan and adjoining Birbhum and Murshidabad districts, the people wanted to establish a higher education centre in this region. There has been a ceaseless effort on the part of the local people to establish an Institute of Higher learning here for a long time and ultimately they got success with help of <strong>Sri Amar Chand Kundu</strong>, a famous social worker. Under the able leadership of local education loving people with the patronage of Sri Kundu, <strong>Kandra RadhaKanta Kundu Mahavidyalaya</strong> was founded on <strong>16th, March 2001</strong>.</p>
-
-<p>There is a remarkable change of the College in last few years has been experiencing in all respect. From its humble beginning on <strong>16.03.01</strong> with <strong>145</strong> students in <strong>Kandra J.M High School</strong>, the College is steadily progressing in its mission and vision of catering higher education to the Students of backward P.S of Ketugram of Burdwan and the adjoining districts of Mursidabad and Birbhum. The College was permanently shifted to its own building constructed on its sprawling <strong>5.27 acres of land on 21st. July 2002</strong>.</p>
-
-<p>The vision & mission of the College is to disseminate higher education to the youth especially women and minority of this locality and surrounding areas, so that they can face confidently different challenges of life. We are determined to success our vision & mission at any cost. </p>
-		<h2 class="featurette-heading text-gradient">Dr. Mrinal Kanti Chattopadhyay</h2>
-        <h4>Principal</h4>
-        </div>
-      </div>
-      </div>
-      </section>
+<section id = "principal_desk"  class="section clearfix about-principal-voice krk-bg-light box-shadow">
+    <p>Loading..</p>
+</section>
 <!-- ================================================== -->
 <section class="section carsoul-section-panel clrfix notcbg-aa">
 		<div class="container clearfix padding-off">
@@ -583,5 +564,11 @@ include_once './inc/header.php'; ?>
 
 <div class="clearfix"></div>
 <?php include_once './inc/footer.php';?>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#principal_desk").addClass("section clearfix about-principal-voice krk-bg-light box-shadow");
+	$("#principal_desk").load("./ajax/wp-content-principal-desk.php?page_id=14");
+});
+</script>
 </body>
 </html>

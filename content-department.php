@@ -7,8 +7,15 @@ include_once './inc/header.php';
 <?php include_once './inc/topnav.php';
 
 $dept_id = "1"; //TODO Change this to get the id from runtime
+$dept_name="Department not Defined !!";
 if(isset($_REQUEST['dept_id'])){
     $dept_id = $_REQUEST['dept_id'];
+    $query_dept = "SELECT `row_id`, `name`, `description`, `created_by`, `last_upd_dt`, `last_upd_by` FROM `pg_department` WHERE `row_id` = '".$dept_id."'";
+    echo $query_dept;
+    $result = mysql_query($query_dept) or die(mysql_error());
+    while($row = mysql_fetch_array($result)){
+        $dept_name = $row['description'];
+    }
 ?>    
 
 
@@ -19,7 +26,7 @@ if(isset($_REQUEST['dept_id'])){
 	<div class="inner-page-banner-bg full-width pull-left">
     <div class="innre-bann-img"><img src="images/bgicon.png" width="2374" height="1158" alt="img" title="img"></div>
     		<div class="container">
-            		<h1 class="banner-heading">Department  of Bengali</h1>
+            		<h1 class="banner-heading"><?php echo $dept_name?></h1>
             </div>
     </div>
 </div>

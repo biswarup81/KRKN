@@ -31,7 +31,9 @@ if(isset($_GET['page_id'])) {
  
         </div>
         <div class="col-md-8 pull-left text-justify">
-<?php echo $display_name; ?>
+<?php 
+          echo html_entity_decode($content);
+          ?>
     <h2 class="featurette-heading text-gradient">Dr. Mrinal Kanti Chattopadhyay</h2>
         <h4>Principal</h4>
         </div>
