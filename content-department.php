@@ -6,7 +6,7 @@ include_once './inc/header.php';
 <!-- Fixed navbar -->
 <?php include_once './inc/topnav.php';
 
-$dept_id = "1"; //TODO Change this to get the id from runtime
+$dept_id = "1"; 
 $dept_name="Department not Defined !!";
 if(isset($_REQUEST['dept_id'])){
     $dept_id = $_REQUEST['dept_id'];
@@ -41,6 +41,7 @@ if(isset($_REQUEST['dept_id'])){
 <section id = "section-departmental-notice" >Loading..</section>
 <section id='section-other' >Loading..</section>
 <div class="clearfix"></div>
+
 
 <?php include_once './inc/footer.php';?>
 <script type="text/javascript">

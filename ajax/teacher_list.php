@@ -42,8 +42,9 @@ if(isset($_GET['dept_id'])) {
     $sub_result_pp = mysql_query($staff_photo_q) or die(mysql_error());
     if(mysql_num_rows($sub_result_pp)){
         while($sub_row_pp=mysql_fetch_array($sub_result_pp)){
+            $filename = $sub_row_pp['filename'];
     ?>
-    <div class="faculti-pic"><img src="images/fac-ben-5.jpg" width="220" height="220" alt="img" title="img"></div>
+    <div class="faculti-pic"><img src="/College-Office-Maintenance/media/photos/<?php echo $filename; ?>" width="220" height="220" alt="img" title="img"></div>
     <?php }}else{?>
     <div class="faculti-pic"><img src="images/profile.png" width="220" height="220" alt="img" title="img"></div>
     <?php  }?>

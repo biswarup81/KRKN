@@ -23,7 +23,7 @@ if(isset($_GET['staff_id'])){
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#info").addClass("section clearfix about-principal-voice krk-bg-light box-shadow");
-	$("#info").load("./ajax/wp-content-faculty.php?staff_id=<?php echo $staff_id?>");
+	$("#info").load("./ajax/wp-content-resume.php?staff_id=<?php echo $staff_id?>");
 });
 </script>
 </body>
