@@ -3,6 +3,16 @@
 $sql_menu = "SELECT `row_id`, `par_row_id`, `has_sub_menu`, `name`, `disp_name`, `menu_type`, `url`, `order`, `active_flg`, `created`, `created_by`, `last_upd_by`, `last_upd_dt` FROM `pg_navigation_menu` WHERE `par_row_id` is NULL and `has_sub_menu` = 1";
 $result = mysql_query($sql_menu) or die(mysql_error());	
 
+$con1 = mysqli_connect("localhost","kandrark_inkandr","login@123#","kandrark_inkandra_db");
+
+// Check connection
+if (mysqli_connect_errno())
+{
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+$galleries =  mysqli_query($con1,"SELECT * FROM kandrark_inkandra_db.gallery where is_deleted = 'N' order by created_on desc");
+
 
 ?>
 <header class="navbar  navbar-fixed-top header">
@@ -15,16 +25,20 @@ $result = mysql_query($sql_menu) or die(mysql_error());
                 </div>
                 <div class="header-top-nav pull-right">
                 		<ul class="">
-                       	
+                       	<li><a href="./notice.php">Notice	</a></li>
                         <li><a href="#">SSR	</a></li>	 
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Photo Gallery <b class="caret"></b></a>
                         <ul class="dropdown-menu"> 
-                                <li><a href="#">Images (Date-wise/Occasion-wise) </a></li>
-                                <li><a href="#">Videos ( Date-wise/Occasion-wise) </a></li>
+                        <?php 
+                        while($rows1=mysqli_fetch_array($galleries,MYSQLI_ASSOC)){
+                        ?>
+                                <li><a href="./gallery.php?gallery_id=<?php echo $rows1['gallery_id']?>"><?php echo $rows1['gallery_title']?></a></li>
+                        <?php }
+                        
+                        mysqli_close($con1);?>
 							</ul>
 
                         </li>		
-                        <li><a href="#">Others</a></li>	
                         </ul>
 
                 </div>
@@ -61,16 +75,15 @@ $result = mysql_query($sql_menu) or die(mysql_error());
                         <li><a href="content-department.php?dept_id=<?php echo $sub_row1['row_id'];?>"><?php echo htmlspecialchars($sub_row1['name'])?></a></li>
           <?php }}
           } else {
-          $sub_query = "SELECT `row_id`, `par_row_id`, `template_id`, `has_sub_menu`, `name`, `disp_name`, `menu_type`, `url`, `order`, `active_flg`, `created`, `created_by`, `last_upd_by`, `last_upd_dt` FROM `pg_navigation_menu` WHERE `par_row_id` = '".$row_id."'";
+          $sub_query = "SELECT `row_id`, `par_row_id`, `template_id`, `has_sub_menu`, `name`, `disp_name`, `menu_type`, 
+            `url`, `order`, `active_flg`, `created`, `created_by`, `last_upd_by`, `last_upd_dt` FROM `pg_navigation_menu` WHERE `par_row_id` = '".$row_id."'";
           $sub_result = mysql_query($sub_query) or die(mysql_error());
           if(mysql_num_rows($result)){
-          	while($sub_row=mysql_fetch_array($sub_result)){
-          	    if($sub_row['name'] == "principals-desk") {
-          ?>
-                        <li><a href="content-prpl-gen.php?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
-          <?php } else {?>
-           <li><a href="content-gen.php?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
-          <?php }}}}?>  
+          	while($sub_row=mysql_fetch_array($sub_result)){ 
+          	    ?>
+          	   
+           <li><a href="<?php echo $sub_row['url'];?>?page_id=<?php echo $sub_row['row_id'];?>"><?php echo htmlspecialchars($sub_row['disp_name'])?></a></li>
+          <?php }}}?>  
           </ul>
 </li>
 			<?php }}?>

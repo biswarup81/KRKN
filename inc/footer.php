@@ -13,15 +13,18 @@
                 </div>
                 <div class="footer-col col-lg-4 pull-left ">
                 <h4 class="footer-title text-gradient-span"><span>Locate Us </span></h4>
-                <div class="footer-entry clearfix">
-                		
+                <div class="footer-entry clearfix" id="map">
+                <a target="_blank" href="https://www.google.co.in/maps/place/Kandra+RadhaKanta+Kundu+Mahavidyalaya(KANDRA+COLLEGE)/@23.7323256,86.8458168,8z/data=!4m5!3m4!1s0x39f9bd9be24c4d89:0xa22d0a2c7ba409a8!8m2!3d23.7323256!4d87.9664222">
+				
+                		<img alt="Kandra RKK Mahavidyalaya" src="./images/map.JPG">
+                		</a>
                 </div>
                 
                 </div>
                 <div class="footer-col col-lg-4 pull-left ">
                 <h4 class="footer-title text-gradient-span"><span>Useful Links</span></h4>
-                <div class="footer-entry clearfix">
-                		
+                <div class="footer-entry clearfix" id="useful_links">
+                		Loading....
                 </div>
                 
                 </div>
@@ -40,3 +43,9 @@
 <script src="dist/js/slick.js"></script>
 <script src="dist/js/colorbox.js"></script>
 <script src="dist/js/custom-script.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#useful_links").addClass("footer-entry clearfix");
+	$("#useful_links").load("./ajax/wp-content-useful-links.php");
+});
+</script>

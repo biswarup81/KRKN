@@ -38,7 +38,7 @@ if(isset($_GET['dept_id'])) {
     <div class="faculties-col-inner col-lg-12 pull-left padding-off">
     <?php //Get Profile Photo
     $staff_photo_q = "SELECT `row_id`, `staff_id`, `filename`, `active_flg`, `created`, `created_by`, 
-                    `last_upd_dt`, `last_upd_by` FROM `pg_staff_photo` WHERE `staff_id` = '".$staff_id."'";
+                    `last_upd_dt`, `last_upd_by` FROM `pg_staff_photo` WHERE `staff_id` = '".$staff_id."' and `active_flg` = 1";
     $sub_result_pp = mysql_query($staff_photo_q) or die(mysql_error());
     if(mysql_num_rows($sub_result_pp)){
         while($sub_row_pp=mysql_fetch_array($sub_result_pp)){
