@@ -19,14 +19,14 @@ $galleries =  mysqli_query($con1,"SELECT * FROM kandrark_inkandra_db.gallery whe
 <div class="container-fluid bg-blue header-top">
 		<div class="container">
         		<div class="col-lg-7   header-top-col pull-left">
-                <div class="site-title">Kandra Radhakanta Kundu Mahavidyalaya</div>
+                <div class="site-title">Kandra Radhakanta Kundu Mahavidyalaya (NAAC Accredated B Grade College)</div>
                 <!--<a href="tel:+91 (03453) 273372"><span class="glyphicon glyphicon-earphone"></span> <strong>+91 (03453) 273372</strong></a>-->
                 <!--<a href="mailto:info@kandrarkkmahavidyalaya.org"><span class="glyphicon glyphicon-envelope"></span> <strong>info@kandrarkkmahavidyalaya.org</strong></a>-->
                 </div>
                 <div class="header-top-nav pull-right">
                 		<ul class="">
                        	<li><a href="./notice.php">Notice	</a></li>
-                        <li><a href="#">SSR	</a></li>	 
+                        <li><a href="./_SSR/NAAC_SSR.pdf" target="_blank">SSR	</a></li>	 
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Photo Gallery <b class="caret"></b></a>
                         <ul class="dropdown-menu"> 
                         <?php 

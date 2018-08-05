@@ -26,15 +26,15 @@ body {
 	z-index: 15;
 }
 .site-title {
-	color: #fff;
-	font-weight: 500;
-	position: absolute;
-	left: 3px;
-	top: -2px;
-	font-size: 24px;
-	width: 100%;
-	font-family: Roboto;
-	letter-spacing: 1px;
+    color: #fff;
+    font-weight: 500;
+    position: absolute;
+    left: 3px;
+    top: 6px;
+    font-size: 16px;
+    width: 100%;
+    font-family: Roboto;
+    letter-spacing: 1px;
 }
 .header-top-col a {
 	font-size: 14px;

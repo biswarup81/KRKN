@@ -33,13 +33,11 @@ if(isset($_REQUEST['dept_id'])){
 <!-- /.carousel -->
 <section id = "section-techer-list" ><p>Loading..</p></section>                
 <section id = "section-research-activities" ><p>Loading..</p></section>
-<section id = "section-academic-activities" ><p>Loading..</p></section>
-<section id = "section-other-activities" ><p>Loading..</p></section>
+ <section id = "section-academic-activities" ><p>Loading..</p></section>
 
-<section id = "section-annual-assessment-report"> Loading..</section>
 
 <section id = "section-departmental-notice" >Loading..</section>
-<section id='section-other' >Loading..</section>
+
 <div class="clearfix"></div>
 
 
