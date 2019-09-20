@@ -23,7 +23,7 @@ if(isset($_GET['dept_id'])) {
     	//Get Staff Details 
     	$staff_details_q = "SELECT `row_id`, `title`, `fst_name`, `middle_name`, `last_name`, `dob`, `staff_id`, 
 				`email`, `mobile`, `job_role`, `created`, `created_by`, `last_upd_dt`, `last_upd_by`, `desig`, `qualification` 
-				FROM `pg_staff` WHERE `row_id` = '".$staff_id."'";
+				FROM `pg_staff` WHERE `row_id` = '".$staff_id."' and status = 1";
     	//echo $staff_details_q;
     	$sub_result = mysql_query($staff_details_q) or die(mysql_error());
     	if(mysql_num_rows($sub_result)){
